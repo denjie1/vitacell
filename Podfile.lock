@@ -33,7 +33,6 @@ PODS:
   - Toast (2.4)
   - TTTAttributedLabel (2.0.0)
   - UMengAnalytics-NO-IDFA (4.1.1)
-  - UMengSocial (5.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
@@ -46,7 +45,19 @@ DEPENDENCIES:
   - Toast (~> 2.3)
   - TTTAttributedLabel
   - UMengAnalytics-NO-IDFA
-  - UMengSocial (~> 5.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FMDB
+    - MBProgressHUD
+    - MJRefresh
+    - SDWebImage
+    - SSKeychain
+    - Toast
+    - TTTAttributedLabel
+    - UMengAnalytics-NO-IDFA
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -59,8 +70,7 @@ SPEC CHECKSUMS:
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UMengAnalytics-NO-IDFA: 1064992c1b7aaa22823179c0b33a664813fd7a85
-  UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
 
-PODFILE CHECKSUM: 6be2ac9fbee967705e75ca05bc951b3588777bd9
+PODFILE CHECKSUM: 490ddaca9e6347189ce27d7444e4551d66e68298
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.8.4

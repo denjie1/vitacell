@@ -10,12 +10,12 @@
 #import "MainViewController.h"
 #import "UIColor+Util.h"
 
-#import <UMSocial.h>
+#import "UMSocial.h"
 #import "WeiboSDK.h"
 
-#import <UMengSocial/UMSocialQQHandler.h>
-#import <UMengSocial/UMSocialWechatHandler.h>
-#import <UMengSocial/UMSocialSinaSSOHandler.h>
+#import "UMSocialQQHandler.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 #import "UMMobClick/MobClick.h"
 
 #import "OSCShareManager.h"

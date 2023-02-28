@@ -14,6 +14,7 @@ pod 'MBProgressHUD'
 pod 'DZNEmptyDataSet'
 pod 'FMDB'
 pod 'UMengAnalytics-NO-IDFA'
-pod 'UMengSocial' , '~>5.0'
+#pod 'UMengSocial'
+#pod 'Reveal-SDK', :configurations => ['Debug']
 
 end
