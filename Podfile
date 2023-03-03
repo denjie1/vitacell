@@ -15,6 +15,6 @@ pod 'DZNEmptyDataSet'
 pod 'FMDB'
 pod 'UMengAnalytics-NO-IDFA'
 #pod 'UMengSocial'
-#pod 'Reveal-SDK', :configurations => ['Debug']
+pod 'Reveal-SDK', :configurations => ['Debug']
 
 end

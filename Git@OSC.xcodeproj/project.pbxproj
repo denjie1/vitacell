@@ -1320,6 +1320,7 @@
 				0002D2431916324B001FDED8 /* Frameworks */,
 				0002D2441916324B001FDED8 /* Resources */,
 				DE0DA4C1E9AF97ECD8D6BE9A /* [CP] Copy Pods Resources */,
+				2D659FECDE7E1C97E87544D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1447,6 +1448,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D659FECDE7E1C97E87544D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Git@OSC/Pods-Git@OSC-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Git@OSC/Pods-Git@OSC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		75E25A5D5B194D05BAB31768 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
