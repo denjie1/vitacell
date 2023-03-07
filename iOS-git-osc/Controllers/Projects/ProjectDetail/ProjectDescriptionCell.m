@@ -30,7 +30,7 @@
     if (self) {
         self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = UIColorFromRGB(0xf0f0f0);
+        self.backgroundColor = [UIColor contentBackground];
         self.userInteractionEnabled = YES;
         [self initSubviews];
         [self setLayout];
@@ -71,7 +71,7 @@
 - (void)initSubviews
 {
     _projectDescriptionField = [UILabel new];
-    _projectDescriptionField.backgroundColor = UIColorFromRGB(0xf0f0f0);
+    _projectDescriptionField.backgroundColor = [UIColor contentBackground];
     _projectDescriptionField.lineBreakMode = NSLineBreakByWordWrapping;
     _projectDescriptionField.numberOfLines = 0;
     _projectDescriptionField.font = [UIFont systemFontOfSize:15];

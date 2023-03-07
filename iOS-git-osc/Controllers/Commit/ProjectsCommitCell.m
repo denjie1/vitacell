@@ -17,14 +17,14 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = [UIColor uniformColor];
+        self.backgroundColor = [UIColor contentBackground];
         
         self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self initSubViews];
         [self setLayout];
         
         UIView *selectedBackground = [UIView new];
-        selectedBackground.backgroundColor = [UIColor colorWithHex:0xdadbdc];
+        selectedBackground.backgroundColor = [UIColor clearColor];
         [self setSelectedBackgroundView:selectedBackground];
     }
     return self;

@@ -254,7 +254,8 @@ static NSString * const EventCellIdentifier = @"EventCell";
         [cell.eventAbstract addGestureRecognizer:tapsEventAbstract];
         [Event setAbstractContent:cell.eventAbstract forEvent:event];
         cell.eventAbstract.tag = indexPath.row * 10;
-        
+        cell.eventAbstract.backgroundColor = [UIColor whiteColor];
+        cell.eventAbstract.textColor = [UIColor blackColor];
         return cell;
     } else {
         return [UITableViewCell new];

@@ -62,7 +62,8 @@
                                                                       metrics:nil
                                                                         views:views]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_messageLabel]-15-|"
+    NSString *format = [NSString stringWithFormat:@"V:[_messageLabel]-%f-|",(15+TabbarSafeBottomMargin)];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:format
                                                                       options:0
                                                                       metrics:nil
                                                                         views:views]];

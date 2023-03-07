@@ -59,6 +59,7 @@
     //_eventAbstract.selectable = NO;
     _eventAbstract.editable = NO;
     _eventAbstract.scrollEnabled = NO;
+    _eventAbstract.textColor = [UIColor textMainColor];
     [self.contentView addSubview:_eventAbstract];
     
     _time = [UILabel new];

@@ -26,7 +26,7 @@ PODS:
   - FMDB/standard (2.6.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
-  - Reveal-SDK (24)
+  - Reveal-SDK (23)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -34,6 +34,9 @@ PODS:
   - Toast (2.4)
   - TTTAttributedLabel (2.0.0)
   - UMengAnalytics-NO-IDFA (4.1.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
@@ -41,12 +44,13 @@ DEPENDENCIES:
   - FMDB
   - MBProgressHUD
   - MJRefresh
-  - Reveal-SDK
+  - Reveal-SDK (~> 23.0)
   - SDWebImage (~> 3.6)
   - SSKeychain
   - Toast (~> 2.3)
   - TTTAttributedLabel
   - UMengAnalytics-NO-IDFA
+  - YYKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -61,6 +65,7 @@ SPEC REPOS:
     - Toast
     - TTTAttributedLabel
     - UMengAnalytics-NO-IDFA
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -68,13 +73,14 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
+  Reveal-SDK: bb223749b198a2b9bad6043ec6ad748f99e7abe5
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UMengAnalytics-NO-IDFA: 1064992c1b7aaa22823179c0b33a664813fd7a85
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fbd1c201dd2ccf159628c6966466cca6c3dc133f
+PODFILE CHECKSUM: 1a685e1a36d4e57b645e56c40079ad84115dd0a8
 
 COCOAPODS: 1.8.4

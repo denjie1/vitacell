@@ -9,6 +9,7 @@
 #import "ProjectNameCell.h"
 #import "Tools.h"
 #import "GLProject.h"
+#import "UIColor+Util.h"
 
 @implementation ProjectNameCell
 
@@ -28,7 +29,7 @@
         
         self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = UIColorFromRGB(0xf0f0f0);
+        self.backgroundColor = [UIColor contentBackground];
         
         [self initSubviews];
         [self setLayout];
@@ -57,13 +58,14 @@
     [self.contentView addSubview:_portrait];
     
     _projectName = [UILabel new];
-    _projectName.backgroundColor = UIColorFromRGB(0xf0f0f0);
+    _projectName.backgroundColor = [UIColor contentBackground];
     [_projectName setText:_project.name];
     _projectName.font = [UIFont boldSystemFontOfSize:17];
+    _projectName.textColor = [UIColor textMainColor];
     [self.contentView addSubview:_projectName];
     
     _timeInterval = [UILabel new];
-    _timeInterval.backgroundColor = UIColorFromRGB(0xf0f0f0);
+    _timeInterval.backgroundColor = [UIColor contentBackground];
     NSDictionary *grayTextAttributes = @{
                                          NSForegroundColorAttributeName:[UIColor grayColor],
                                          NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:15]

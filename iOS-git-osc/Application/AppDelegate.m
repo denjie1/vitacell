@@ -39,7 +39,7 @@ static NSString * const SINA_APP_SECRET = @"3fbd38f46f9a2dd0207160c4a8d82149";
 
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor=UIColorFromRGB(0x272727);
+//    self.window.backgroundColor=UIColorFromRGB(0x272727);
 	
     self.window.rootViewController = [MainViewController new];
     [self.window makeKeyAndVisible];

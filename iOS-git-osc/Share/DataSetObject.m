@@ -7,6 +7,7 @@
 //
 
 #import "DataSetObject.h"
+#import "UIColor+Util.h"
 
 @implementation DataSetObject
 
@@ -113,7 +114,7 @@
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
 {
-    return [UIColor colorWithRed:235.0/255 green:235.0/255 blue:243.0/255 alpha:1.0];
+    return [UIColor toolbarBackground];
 }
 
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView

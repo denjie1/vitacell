@@ -51,7 +51,7 @@
         self.title = title;
         
         _sizeWidth = self.view.frame.size.width;
-        _sizeHeight = self.view.frame.size.height-64;
+        _sizeHeight = self.view.frame.size.height-TabbarHeight;
         _heightForTitle = 35; //滚动标题高度
         
         if (userPortrait) {
@@ -106,8 +106,8 @@
     [_titleSegment setSectionTitles:titles];
     [_titleSegment setSelectedSegmentIndex:0];
     
-    [_titleSegment setBackgroundColor:[UIColor whiteColor]];
-    [_titleSegment setTextColor:[UIColor blackColor]];
+    [_titleSegment setBackgroundColor:[UIColor toolbarBackground]];
+    [_titleSegment setTextColor:[UIColor textMainColor]];
     [_titleSegment setSelectedTextColor:[UIColor navigationbarColor]];
     [_titleSegment setSelectionIndicatorColor:[UIColor navigationbarColor]];
     

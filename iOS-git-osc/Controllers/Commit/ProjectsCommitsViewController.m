@@ -72,7 +72,7 @@ static NSString * const cellId = @"ProjectsCommitCell";
     _commits = [NSMutableArray new];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-NavHeight-TabbarSafeBottomMargin)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
@@ -321,9 +321,9 @@ static NSString * const cellId = @"ProjectsCommitCell";
         GLCommit *commit = _commits[indexPath.row];
         [cell contentForProjectsCommit:commit];
         
-        UIView *selectedBackground = [UIView new];
-        selectedBackground.backgroundColor = UIColorFromRGB(0xdadbdc);
-        [cell setSelectedBackgroundView:selectedBackground];
+//        UIView *selectedBackground = [UIView new];
+//        selectedBackground.backgroundColor = UIColorFromRGB(0xdadbdc);
+//        [cell setSelectedBackgroundView:selectedBackground];
         
         return cell;
     }

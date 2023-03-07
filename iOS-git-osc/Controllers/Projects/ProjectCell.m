@@ -8,6 +8,7 @@
 
 #import "ProjectCell.h"
 #import "Tools.h"
+#import "UIColor+Util.h"
 
 @implementation ProjectCell
 
@@ -22,7 +23,7 @@
         [self setLayout];
         
         UIView *selectedBackground = [UIView new];
-        selectedBackground.backgroundColor = UIColorFromRGB(0xdadbdc);
+        selectedBackground.backgroundColor = [UIColor cellSelected];
         [self setSelectedBackgroundView:selectedBackground];
     }
     return self;
@@ -57,7 +58,7 @@
     _projectDescriptionField.lineBreakMode = NSLineBreakByWordWrapping | NSLineBreakByTruncatingTail;
     _projectDescriptionField.numberOfLines = 4;
     _projectDescriptionField.font = [UIFont systemFontOfSize:14];
-    _projectDescriptionField.textColor = UIColorFromRGB(0x515151);
+    _projectDescriptionField.textColor = [UIColor textMainColor];
     [_projectDescriptionField setPreferredMaxLayoutWidth:200];
     [self.contentView addSubview:_projectDescriptionField];
     

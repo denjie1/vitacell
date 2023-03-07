@@ -20,6 +20,7 @@
 #import "MJRefresh.h"
 #import "DataSetObject.h"
 #import "Reachability.h"
+#import "UIColor+Util.h"
 
 @interface ProjectsTableController ()
 
@@ -104,7 +105,7 @@ static NSString * const cellId = @"ProjectCell";
         }
     } else {
         _projects = [NSMutableArray new];
-        [self fetchProject:YES];
+//        [self fetchProject:YES];
     }
     
     /* 设置空页面状态 */
