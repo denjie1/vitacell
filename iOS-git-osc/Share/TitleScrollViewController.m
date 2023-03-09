@@ -67,8 +67,9 @@
             }
             img.userInteractionEnabled = YES;
             [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(myInfos)]];
-            
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:img];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+            [view addSubview:img];
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
             
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"SetUp"]
                                                                                       style:UIBarButtonItemStylePlain

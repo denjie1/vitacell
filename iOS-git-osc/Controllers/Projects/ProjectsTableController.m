@@ -281,6 +281,7 @@ static NSString * const cellId = @"ProjectCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];//关闭键盘
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger row = indexPath.row;
     

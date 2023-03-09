@@ -41,6 +41,19 @@ static NSString * const SearchResultsCellID = @"SearchResultsCell";
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (!self.searchBar.isFirstResponder) {
+        [self.searchBar becomeFirstResponder];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.searchBar resignFirstResponder];
+    [self.view endEditing:YES];
+    [super viewDidDisappear:animated];
+}
+
 - (void)viewDidUnload
 {
     _resultsTableController = nil;
