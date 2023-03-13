@@ -82,6 +82,7 @@
 #pragma mark - 返回按钮
 - (void)backMainController
 {
+    [self.view endEditing:YES];
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.window.rootViewController = [MainViewController new];
 }

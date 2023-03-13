@@ -34,9 +34,15 @@ static NSString * const SINA_APP_SECRET = @"3fbd38f46f9a2dd0207160c4a8d82149";
     
     [UMSocialQQHandler setQQWithAppId:@"1101982202" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
     if ([WeiboSDK isWeiboAppInstalled]) {
+//        [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:SINA_APP_KEY
+//             secret:SINA_APP_SECRET
+//        RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
         [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:SINA_APP_KEY
              secret:SINA_APP_SECRET
         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+        
+        [WeiboSDK registerApp:SINA_APP_KEY];
+
     }
     
 

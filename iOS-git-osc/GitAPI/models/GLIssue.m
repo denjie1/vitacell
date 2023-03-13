@@ -31,7 +31,8 @@ static NSString * const kKeyCreatedAt = @"created_at";
 {
     if (self = [super init]) {
         _issueId = [json[kKeyId] longLongValue];
-        _issueIid = [json[kKeyIssueIid] longLongValue];
+        BOOL hasIssueIid = json[kKeyIssueIid] != [NSNull null];
+        _issueIid = hasIssueIid ? [json[kKeyIssueIid] longLongValue] : 0;
         _projectId = [json[kKeyProjectId] longLongValue];
         _title = [self checkForNull:json[kKeyTitle]];
         _issueDescription = [self checkForNull:json[kKeyDescription]];
