@@ -15,7 +15,7 @@
 
 #import "UMSocialQQHandler.h"
 #import "UMSocialWechatHandler.h"
-#import "UMSocialSinaSSOHandler.h"
+//#import "UMSocialSinaSSOHandler.h"
 #import "UMMobClick/MobClick.h"
 
 #import "OSCShareManager.h"
@@ -35,12 +35,11 @@ static NSString * const SINA_APP_SECRET = @"3fbd38f46f9a2dd0207160c4a8d82149";
     [UMSocialQQHandler setQQWithAppId:@"1101982202" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
     if ([WeiboSDK isWeiboAppInstalled]) {
 //        [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:SINA_APP_KEY
-//             secret:SINA_APP_SECRET
-//        RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
-        [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:SINA_APP_KEY
-             secret:SINA_APP_SECRET
-        RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
-        
+//                                                  secret:SINA_APP_SECRET
+//                                             RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+//
+        /************ 第三方登录设置 *************/
+        [WeiboSDK enableDebugMode:YES];
         [WeiboSDK registerApp:SINA_APP_KEY];
 
     }
@@ -110,5 +109,45 @@ static NSString * const SINA_APP_SECRET = @"3fbd38f46f9a2dd0207160c4a8d82149";
     return  [UMSocialSnsService handleOpenURL:url];
 }
 
+
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
+{
+    if ([response isKindOfClass:WBSendMessageToWeiboResponse.class])
+    {
+        NSString *title = NSLocalizedString(@"发送结果", nil);
+        NSString *message = [NSString stringWithFormat:@"%@: %d\n%@: %@\n%@: %@", NSLocalizedString(@"响应状态", nil), (int)response.statusCode, NSLocalizedString(@"响应UserInfo数据", nil), response.userInfo, NSLocalizedString(@"原请求UserInfo数据", nil),response.requestUserInfo];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
+                                              otherButtonTitles:nil];
+        WBSendMessageToWeiboResponse* sendMessageToWeiboResponse = (WBSendMessageToWeiboResponse*)response;
+        NSString* accessToken = [sendMessageToWeiboResponse.authResponse accessToken];
+        if (accessToken)
+        {
+            self.wbtoken = accessToken;
+        }
+        NSString* userID = [sendMessageToWeiboResponse.authResponse userID];
+        if (userID) {
+            self.wbCurrentUserID = userID;
+        }
+        [alert show];
+    }
+//    else if ([response isKindOfClass:WBAuthorizeResponse.class])
+//    {
+//        NSString *title = NSLocalizedString(@"认证结果", nil);
+//        NSString *message = [NSString stringWithFormat:@"%@: %d\nresponse.userId: %@\nresponse.accessToken: %@\n%@: %@\n%@: %@", NSLocalizedString(@"响应状态", nil), (int)response.statusCode,[(WBAuthorizeResponse *)response userID], [(WBAuthorizeResponse *)response accessToken],  NSLocalizedString(@"响应UserInfo数据", nil), response.userInfo, NSLocalizedString(@"原请求UserInfo数据", nil), response.requestUserInfo];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+//                                                        message:message
+//                                                       delegate:nil
+//                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
+//                                              otherButtonTitles:nil];
+//        
+//        self.wbtoken = [(WBAuthorizeResponse *)response accessToken];
+//        self.wbCurrentUserID = [(WBAuthorizeResponse *)response userID];
+//        self.wbRefreshToken = [(WBAuthorizeResponse *)response refreshToken];
+//        [alert show];
+//    }
+}
 
 @end

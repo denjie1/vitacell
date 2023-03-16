@@ -64,9 +64,6 @@
 		283018212396581200D76363 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017C62396581200D76363 /* TencentOpenAPI.framework */; };
 		283018222396581200D76363 /* libAPOpenSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017C82396581200D76363 /* libAPOpenSdk.a */; };
 		283018232396581200D76363 /* libSocialAlipayShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017C92396581200D76363 /* libSocialAlipayShare.a */; };
-		283018242396581200D76363 /* libSocialTumblr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017CE2396581200D76363 /* libSocialTumblr.a */; };
-		283018252396581200D76363 /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017D32396581200D76363 /* libSocialSinaSSO.a */; };
-		283018262396581200D76363 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017D62396581200D76363 /* libWeiboSDK.a */; };
 		283018272396581200D76363 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017DF2396581200D76363 /* libSocialWechat.a */; };
 		283018282396581200D76363 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283017E22396581200D76363 /* libWeChatSDK.a */; };
 		283018322396581200D76363 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 283018002396581200D76363 /* UMSocialLocalizable.strings */; };
@@ -306,21 +303,6 @@
 		283017CA2396581200D76363 /* APOpenAPIObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOpenAPIObject.h; sourceTree = "<group>"; };
 		283017CB2396581200D76363 /* APOpenAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOpenAPI.h; sourceTree = "<group>"; };
 		283017CC2396581200D76363 /* UMSocialAlipayShareHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAlipayShareHandler.h; sourceTree = "<group>"; };
-		283017CE2396581200D76363 /* libSocialTumblr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialTumblr.a; sourceTree = "<group>"; };
-		283017CF2396581200D76363 /* UMSocialTumblrHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialTumblrHandler.h; sourceTree = "<group>"; };
-		283017D12396581200D76363 /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
-		283017D22396581200D76363 /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
-		283017D32396581200D76363 /* libSocialSinaSSO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSinaSSO.a; sourceTree = "<group>"; };
-		283017D42396581200D76363 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
-		283017D52396581200D76363 /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
-		283017D62396581200D76363 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
-		283017D72396581200D76363 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
-		283017D82396581200D76363 /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
-		283017D92396581200D76363 /* UMSocialSinaSSOHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaSSOHandler.h; sourceTree = "<group>"; };
-		283017DA2396581200D76363 /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
-		283017DB2396581200D76363 /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
-		283017DC2396581200D76363 /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
-		283017DD2396581200D76363 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
 		283017DF2396581200D76363 /* libSocialWechat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWechat.a; sourceTree = "<group>"; };
 		283017E02396581200D76363 /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
 		283017E12396581200D76363 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -557,7 +539,6 @@
 				00D0852519D99D7100E2EA0E /* CoreTelephony.framework in Frameworks */,
 				00D0852319D99D6200E2EA0E /* libsqlite3.dylib in Frameworks */,
 				00D0852119D99D3D00E2EA0E /* libiconv.dylib in Frameworks */,
-				283018252396581200D76363 /* libSocialSinaSSO.a in Frameworks */,
 				00B3CF9C19CC0D2E00747373 /* CoreMotion.framework in Frameworks */,
 				00B3CF9A19CC0A6600747373 /* AudioToolbox.framework in Frameworks */,
 				00B685B819ADCF7D00705534 /* SystemConfiguration.framework in Frameworks */,
@@ -566,12 +547,10 @@
 				283018232396581200D76363 /* libSocialAlipayShare.a in Frameworks */,
 				0021BAF41923608200626A2C /* Security.framework in Frameworks */,
 				0002D24C1916324B001FDED8 /* CoreGraphics.framework in Frameworks */,
-				283018242396581200D76363 /* libSocialTumblr.a in Frameworks */,
 				0002D24E1916324B001FDED8 /* UIKit.framework in Frameworks */,
 				2830183D2396581200D76363 /* libUMSocial_Sdk_Comment_5.0.a in Frameworks */,
 				0002D24A1916324B001FDED8 /* Foundation.framework in Frameworks */,
 				283018222396581200D76363 /* libAPOpenSdk.a in Frameworks */,
-				283018262396581200D76363 /* libWeiboSDK.a in Frameworks */,
 				1AC43942DC21096BD2B009AF /* libPods-Git@OSC.a in Frameworks */,
 				283018212396581200D76363 /* TencentOpenAPI.framework in Frameworks */,
 				283018272396581200D76363 /* libSocialWechat.a in Frameworks */,
@@ -850,8 +829,6 @@
 			children = (
 				283017C22396581200D76363 /* TencentOpenAPI */,
 				283017C72396581200D76363 /* AlipayShare */,
-				283017CD2396581200D76363 /* Tumblr */,
-				283017D02396581200D76363 /* SinaSSO */,
 				283017DE2396581200D76363 /* Wechat */,
 			);
 			path = UMSocial_Sdk_Extra_Frameworks;
@@ -878,35 +855,6 @@
 				283017CC2396581200D76363 /* UMSocialAlipayShareHandler.h */,
 			);
 			path = AlipayShare;
-			sourceTree = "<group>";
-		};
-		283017CD2396581200D76363 /* Tumblr */ = {
-			isa = PBXGroup;
-			children = (
-				283017CE2396581200D76363 /* libSocialTumblr.a */,
-				283017CF2396581200D76363 /* UMSocialTumblrHandler.h */,
-			);
-			path = Tumblr;
-			sourceTree = "<group>";
-		};
-		283017D02396581200D76363 /* SinaSSO */ = {
-			isa = PBXGroup;
-			children = (
-				283017D12396581200D76363 /* WBHttpRequest+WeiboUser.h */,
-				283017D22396581200D76363 /* WBSDKRelationshipButton.h */,
-				283017D32396581200D76363 /* libSocialSinaSSO.a */,
-				283017D42396581200D76363 /* WBHttpRequest+WeiboGame.h */,
-				283017D52396581200D76363 /* WeiboUser.h */,
-				283017D62396581200D76363 /* libWeiboSDK.a */,
-				283017D72396581200D76363 /* WBHttpRequest+WeiboShare.h */,
-				283017D82396581200D76363 /* WBHttpRequest.h */,
-				283017D92396581200D76363 /* UMSocialSinaSSOHandler.h */,
-				283017DA2396581200D76363 /* WBSDKBasicButton.h */,
-				283017DB2396581200D76363 /* WBHttpRequest+WeiboToken.h */,
-				283017DC2396581200D76363 /* WBSDKCommentButton.h */,
-				283017DD2396581200D76363 /* WeiboSDK.h */,
-			);
-			path = SinaSSO;
 			sourceTree = "<group>";
 		};
 		283017DE2396581200D76363 /* Wechat */ = {
@@ -1493,11 +1441,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Git@OSC/Pods-Git@OSC-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SSKeychain/Support/SSKeychain.bundle",
+				"${PODS_ROOT}/Weibo_SDK/libWeiboSDK/WeiboSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SSKeychain.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

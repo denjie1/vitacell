@@ -20,6 +20,10 @@
         
         [self initSubviews];
         [self setAutoLayout];
+        
+        UIView *selectedBackground = [UIView new];
+        selectedBackground.backgroundColor = [UIColor cellSelected];
+        [self setSelectedBackgroundView:selectedBackground];
     }
     return self;
 }

@@ -10,16 +10,22 @@
 #import "Tools.h"
 #import "UMSocial.h"
 #import <MBProgressHUD.h>
+#import <WeiboSDK.h>
+#import "AppDelegate.h"
 
 @import SafariServices;
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SHAREBOARD_HEIGHT curShareBoard.bounds.size.height
 #define SHAREBOARD_WIDTH curShareBoard.bounds.size.width
+#define kRedirectURI    @"https://www.sina.com"
 
 @interface OSCShareManager ()<OSCShareBoardDelegate>
+
+
 {
 	__weak OSCShareBoard* _curShareBoard;
+    
 }
 
 @end
@@ -112,6 +118,7 @@ static OSCShareManager* _shareManager ;
 
 @implementation OSCShareBoard{
     BOOL _touchTrack;
+    WBMessageObject *_messageObject;
 }
 
 + (instancetype)shareBoardWithProjectModel:(GLProject *)projectM urlStr:(NSString *)urlStr image:(UIImage *)snipImg{
@@ -147,6 +154,21 @@ static OSCShareManager* _shareManager ;
     }
 }
 
+-(void)messageShare
+{
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+    authRequest.redirectURI = kRedirectURI;
+    authRequest.scope = @"all";
+    
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:_messageObject authInfo:authRequest access_token:myDelegate.wbtoken];
+//    request.userInfo = @{@"ShareMessageFrom": @"SendMessageToWeiboViewController",
+//                         @"Other_Info_1": [NSNumber numberWithInt:123],
+//                         @"Other_Info_2": @[@"obj1", @"obj2"],
+//                         @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+    [WeiboSDK sendRequest:request];
+}
+
 - (IBAction)buttonAction:(id)sender {
     UIButton *button = (UIButton *)sender;
     UIViewController* curViewController = [self topViewControllerForViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
@@ -159,24 +181,13 @@ static OSCShareManager* _shareManager ;
     switch (button.tag) {
         case 1: //weibo
         {
-            if (_isImage) {
-                [[UMSocialData defaultData].extConfig.sinaData.urlResource setResourceType:UMSocialUrlResourceTypeImage url:self.href];
-            }else{
-        
-               [[UMSocialData defaultData].extConfig.sinaData.urlResource setResourceType:UMSocialUrlResourceTypeDefault url:self.href];
+            if (![WeiboSDK isWeiboAppInstalled]) {
+                return;
             }
-            [[UMSocialDataService defaultDataService] postSNSWithTypes:@[UMShareToSina]
-                                                               content:[NSString stringWithFormat:@"%@", self.descString]
-                                                                 image:self.logoImage
-                                                              location:nil
-                                                           urlResource:resource
-                                                   presentedController:curViewController
-                                                            completion:^(UMSocialResponseEntity *response) {
-                                                                if (response.responseCode == UMSResponseCodeSuccess) {
-                                                                    NSLog(@"分享成功");
-                                                                }
-                                                            }];
-            
+            WBMessageObject *message = [WBMessageObject message];
+            message.text = self.href;
+            _messageObject = message;
+            [self messageShare];
             break;
         }
         case 2: //Wechat Timeline
