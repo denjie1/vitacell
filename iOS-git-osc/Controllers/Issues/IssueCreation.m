@@ -203,7 +203,7 @@
     CGFloat y;
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
     {
-        y = 64;
+        y = NavHeight;
     } else {
         y = 0;
     }

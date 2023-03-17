@@ -132,10 +132,11 @@ static NSString * const IssueDescriptionCellId = @"IssueDescriptionCell";
 {
     if (section > 0) {return nil;}
     UIView *headerView = [UIView new];
-    headerView.backgroundColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f];
+    headerView.backgroundColor = [UIColor contentBackground];
     
     UITextView *titleText = [UITextView new];
-    titleText.backgroundColor = [UIColor clearColor];
+    titleText.backgroundColor = [UIColor contentBackground];
+    titleText.textColor = [UIColor textMainColor];
     titleText.font = [UIFont boldSystemFontOfSize:13];
     [headerView addSubview:titleText];
     titleText.translatesAutoresizingMaskIntoConstraints = NO;

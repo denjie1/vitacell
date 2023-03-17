@@ -27,6 +27,7 @@
 #import "GITAPI.h"
 #import "AFHTTPRequestOperationManager+Util.h"
 #import "DataSetObject.h"
+#import "UIColor+Util.h"
 
 static NSString * const ProjectDetailsCellID = @"ProjectDetailsCell";
 //static NSString * const ProjcetDescriptionCellID = @"ProjcetDescriptionCell";
@@ -63,7 +64,7 @@ static NSString * const ProjectDetailsCellID = @"ProjectDetailsCell";
     
     self.navigationController.navigationBar.translucent = NO;
     
-    self.view.backgroundColor = UIColorFromRGB(0xf0f0f0);
+    self.view.backgroundColor = [UIColor toolbarBackground];
     [[UITableViewHeaderFooterView appearance] setTintColor:UIColorFromRGB(0xf0f0f0)];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ProjectDetailsCellID];

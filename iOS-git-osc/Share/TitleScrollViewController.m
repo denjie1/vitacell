@@ -51,7 +51,7 @@
         self.title = title;
         
         _sizeWidth = self.view.frame.size.width;
-        _sizeHeight = self.view.frame.size.height-64;
+        _sizeHeight = self.view.frame.size.height-TabbarHeight;
         _heightForTitle = 35; //滚动标题高度
         
         if (userPortrait) {
@@ -67,8 +67,9 @@
             }
             img.userInteractionEnabled = YES;
             [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(myInfos)]];
-            
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:img];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+            [view addSubview:img];
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
             
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"SetUp"]
                                                                                       style:UIBarButtonItemStylePlain
@@ -106,8 +107,8 @@
     [_titleSegment setSectionTitles:titles];
     [_titleSegment setSelectedSegmentIndex:0];
     
-    [_titleSegment setBackgroundColor:[UIColor whiteColor]];
-    [_titleSegment setTextColor:[UIColor blackColor]];
+    [_titleSegment setBackgroundColor:[UIColor toolbarBackground]];
+    [_titleSegment setTextColor:[UIColor textMainColor]];
     [_titleSegment setSelectedTextColor:[UIColor navigationbarColor]];
     [_titleSegment setSelectionIndicatorColor:[UIColor navigationbarColor]];
     

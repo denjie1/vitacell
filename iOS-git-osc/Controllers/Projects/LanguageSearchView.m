@@ -16,6 +16,7 @@
 
 #import "AFHTTPRequestOperationManager+Util.h"
 #import "GITAPI.h"
+#import "UIColor+Util.h"
 
 @interface LanguageSearchView ()
 
@@ -139,7 +140,7 @@ static NSString * const LanguageCellID = @"LanguageCell";
                                                                                views:NSDictionaryOfVariableBindings(languageName)]];
     
     UIView *selectedBackground = [UIView new];
-    selectedBackground.backgroundColor = UIColorFromRGB(0xdadbdc);
+    selectedBackground.backgroundColor = [UIColor cellSelected];
     [cell setSelectedBackgroundView:selectedBackground];
     
     return cell;

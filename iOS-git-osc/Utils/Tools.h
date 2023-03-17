@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIColor+Util.h"
 
 typedef enum : NSUInteger {
     ProjectsTypeFeatured = 0,

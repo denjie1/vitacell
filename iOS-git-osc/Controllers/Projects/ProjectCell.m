@@ -8,6 +8,7 @@
 
 #import "ProjectCell.h"
 #import "Tools.h"
+#import "UIColor+Util.h"
 
 @implementation ProjectCell
 
@@ -22,7 +23,7 @@
         [self setLayout];
         
         UIView *selectedBackground = [UIView new];
-        selectedBackground.backgroundColor = UIColorFromRGB(0xdadbdc);
+        selectedBackground.backgroundColor = [UIColor cellSelected];
         [self setSelectedBackgroundView:selectedBackground];
     }
     return self;
@@ -57,7 +58,7 @@
     _projectDescriptionField.lineBreakMode = NSLineBreakByWordWrapping | NSLineBreakByTruncatingTail;
     _projectDescriptionField.numberOfLines = 4;
     _projectDescriptionField.font = [UIFont systemFontOfSize:14];
-    _projectDescriptionField.textColor = UIColorFromRGB(0x515151);
+    _projectDescriptionField.textColor = [UIColor textMainColor];
     [_projectDescriptionField setPreferredMaxLayoutWidth:200];
     [self.contentView addSubview:_projectDescriptionField];
     
@@ -77,7 +78,7 @@
     
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_portrait, _projectNameField, _projectDescriptionField, _lSFWLabel);
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[_portrait(36)]"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[_portrait(37)]"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:viewsDictionary]];
@@ -87,7 +88,7 @@
                                                                              metrics:nil
                                                                                views:viewsDictionary]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[_projectNameField(15)]-8-[_projectDescriptionField]-8@999-[_lSFWLabel(16)]-8-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[_projectNameField(16)]-8-[_projectDescriptionField]-8@999-[_lSFWLabel(16)]-8-|"
                                                                              options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
                                                                              metrics:nil
                                                                                views:viewsDictionary]];

@@ -27,7 +27,8 @@ static NSString * const kKeyCreatedAt = @"created_at";
     if (self = [super init]) {
         _milestoneId = [json[kKeyMilestoneId] longLongValue];
         _milestoneIid = [json[kKeyMilestoneIid] longLongValue];
-        _projectId = [json[kKeyProjectId] longLongValue];
+        BOOL hasProjectId = json[kKeyProjectId] != [NSNull null];
+        _projectId = hasProjectId ? [json[kKeyProjectId] longLongValue] : 0;
         _title = [self checkForNull:json[kKeyTitle]];
         _milestoneDescription = [self checkForNull:json[kKeyDescription]];
         _state = [self checkForNull:json[kKeyState]];

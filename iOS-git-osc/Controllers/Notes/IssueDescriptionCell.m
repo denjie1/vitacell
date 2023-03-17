@@ -7,6 +7,7 @@
 //
 
 #import "IssueDescriptionCell.h"
+#import "UIColor+Util.h"
 
 @implementation IssueDescriptionCell
 
@@ -46,7 +47,7 @@
     _issueDescription.scrollView.scrollEnabled = NO;
     _issueDescription.scrollView.bounces = NO;
     _issueDescription.opaque = NO;
-    _issueDescription.backgroundColor = [UIColor clearColor];
+    _issueDescription.backgroundColor = [UIColor toolbarBackground];
     _issueDescription.scalesPageToFit = NO;
     [self.contentView addSubview:_issueDescription];
 }

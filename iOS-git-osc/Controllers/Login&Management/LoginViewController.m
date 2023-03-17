@@ -20,6 +20,7 @@
 #import <MBProgressHUD.h>
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "UIColor+Util.h"
 
 @import SafariServices;
 
@@ -47,7 +48,7 @@
     [self initSubviews];
     [self setLayout];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor toolbarBackground];
     
     
 #if 1
@@ -81,6 +82,7 @@
 #pragma mark - 返回按钮
 - (void)backMainController
 {
+    [self.view endEditing:YES];
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.window.rootViewController = [MainViewController new];
 }
@@ -102,6 +104,7 @@
     self.accountTextField.delegate = self;
     self.accountTextField.returnKeyType = UIReturnKeyNext;
     self.accountTextField.enablesReturnKeyAutomatically = YES;
+   
     
     self.passwordTextField = [UITextField new];
     self.passwordTextField.placeholder = @"Password";
@@ -113,6 +116,12 @@
     
     [self.accountTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self.passwordTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    
+    if (@available(iOS 13.0,*)) {
+        self.accountTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName:[UIColor placeHolder]}];
+        self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor placeHolder]}];
+    }
     
     [self.view addSubview: self.accountTextField];
     [self.view addSubview: self.passwordTextField];

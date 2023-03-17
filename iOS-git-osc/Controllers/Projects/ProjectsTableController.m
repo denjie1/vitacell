@@ -20,6 +20,7 @@
 #import "MJRefresh.h"
 #import "DataSetObject.h"
 #import "Reachability.h"
+#import "UIColor+Util.h"
 
 @interface ProjectsTableController ()
 
@@ -104,7 +105,7 @@ static NSString * const cellId = @"ProjectCell";
         }
     } else {
         _projects = [NSMutableArray new];
-        [self fetchProject:YES];
+//        [self fetchProject:YES];
     }
     
     /* 设置空页面状态 */
@@ -280,6 +281,7 @@ static NSString * const cellId = @"ProjectCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];//关闭键盘
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger row = indexPath.row;
     

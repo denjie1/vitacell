@@ -7,6 +7,7 @@
 //
 
 #import "UIColor+Util.h"
+#import <YYKit.h>
 
 @implementation UIColor (Util)
 
@@ -33,7 +34,45 @@
 
 + (UIColor *)uniformColor
 {
-    return [UIColor colorWithRed:235.0/255 green:235.0/255 blue:243.0/255 alpha:1.0];
+    return [self colorWithLight:@"#f6f6f6" dark:@"#2f2f2f"];
+}
+
++ (UIColor *)textMainColor {
+    return [self colorWithLight:@"#111111" dark:@"#ffffff"];
+}
+
++ (UIColor *)textSecondaryColor {
+    return [self colorWithLight:@"#9d9d9d" dark:@"#FFFFFF66"];
+}
+
++ (UIColor *)toolbarBackground {
+    return [self colorWithLight:@"#ffffff" dark:@"#2C2C2C"];
+}
+
++ (UIColor *)placeHolder {
+    return [self colorWithLight:@"#9d9d9d" dark:@"#ffffff66"];
+}
+
++ (UIColor *)contentBackground {
+    return [self colorWithLight:@"#f6f6f6" dark:@"#2F2F2F"];
+}
+
++ (UIColor *)colorWithLight:(NSString *)lightString dark:(NSString *)darkString {
+    if (@available(iOS 13.0,*)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return [UIColor colorWithHexString:lightString];
+            } else {
+                return [UIColor colorWithHexString:darkString];
+            }
+        }];
+    } else {
+        return [UIColor colorWithHexString:lightString];
+    }
+}
+
++ (UIColor *)cellSelected {
+    return [self colorWithLight:@"#f6f6f6" dark:@"#2f2f2f"];
 }
 
 @end

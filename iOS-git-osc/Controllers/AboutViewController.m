@@ -56,13 +56,14 @@
     
     for (UIView *view in self.view.subviews) {view.translatesAutoresizingMaskIntoConstraints = NO;}
     NSDictionary *views = NSDictionaryOfVariableBindings(_imageView, _versionLabel, _messageLabel);
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-84-[_imageView(80)]-10-[_versionLabel]"
+    NSString *formatt = [NSString stringWithFormat:@"V:|-%f-[_imageView(80)]-10-[_versionLabel]",(84 + NavHeight)];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formatt
                                                                       options:NSLayoutFormatAlignAllCenterX
                                                                       metrics:nil
                                                                         views:views]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_messageLabel]-15-|"
+    NSString *format = [NSString stringWithFormat:@"V:[_messageLabel]-%f-|",(15+TabbarSafeBottomMargin)];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:format
                                                                       options:0
                                                                       metrics:nil
                                                                         views:views]];

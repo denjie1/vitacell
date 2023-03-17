@@ -14,6 +14,9 @@ pod 'MBProgressHUD'
 pod 'DZNEmptyDataSet'
 pod 'FMDB'
 pod 'UMengAnalytics-NO-IDFA'
-pod 'UMengSocial' , '~>5.0'
+#pod 'UMengSocial'
+pod 'Reveal-SDK', '~> 23.0', :configurations => ['Debug']
+pod 'YYKit'
+pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git" 
 
 end
