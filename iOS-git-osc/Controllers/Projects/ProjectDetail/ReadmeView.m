@@ -64,7 +64,7 @@
     [manager GET:strUrl
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             [_hud hide:YES afterDelay:1];
+             //[_hud hide:YES afterDelay:1];
              
              if (responseObject == nil || responseObject == [NSNull null]) {
                  _isFinishedLoading = YES;
@@ -74,20 +74,20 @@
                  if (_html != nil && ![_html isKindOfClass:[NSNull class]]) {
                      [_readme loadHTMLString:_html baseURL:nil];
                  } else {
-                     [_hud show:YES];
-                     _hud.mode = MBProgressHUDModeCustomView;
-                     _hud.detailsLabelText = @"无ReadMe文件";
-                     [_hud hide:YES afterDelay:1.0];
+//                     [_hud show:YES];
+//                     _hud.mode = MBProgressHUDModeCustomView;
+//                     _hud.detailsLabelText = @"无ReadMe文件";
+//                     [_hud hide:YES afterDelay:1.0];
                  }
                  
              }
          } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
              if (error != nil) {
-                 _hud.detailsLabelText = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
+                 //_hud.detailsLabelText = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
              } else {
-                 _hud.detailsLabelText = @"网络错误";
+                 //_hud.detailsLabelText = @"网络错误";
              }
-             [_hud hide:YES afterDelay:1];
+             //[_hud hide:YES afterDelay:1];
          }];
 }
 

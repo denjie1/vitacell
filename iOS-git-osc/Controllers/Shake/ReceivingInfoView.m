@@ -235,13 +235,13 @@ static NSString * const kKeyExtroInfo = @"extraInfo";
       parameters:parameters
          success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
              
-             _hud.labelText = @"保存成功";
-             [_hud hide:YES afterDelay:1.0];
+//             _hud.labelText = @"保存成功";
+//             [_hud hide:YES afterDelay:1.0];
              
          } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
              _hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hud-failure"]];
-             _hud.labelText = error.userInfo[NSLocalizedDescriptionKey];
-             [_hud hide:YES afterDelay:1.0];
+//             _hud.labelText = error.userInfo[NSLocalizedDescriptionKey];
+//             [_hud hide:YES afterDelay:1.0];
          }];
 }
 

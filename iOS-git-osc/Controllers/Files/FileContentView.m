@@ -135,18 +135,18 @@
     [manager GET:strUrl
       parameters:parameters
          success:^(AFHTTPRequestOperation * operation, id responseObject) {
-             [_hud hide:YES afterDelay:1];
+             [_hud hideAnimated:YES afterDelay:1];
              if (responseObject == nil) { } else {
                  _content = [[GLBlob alloc] initWithJSON:responseObject].content;
                  [self render];
              }
          } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
              if (error != nil) {
-                 _hud.detailsLabelText = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
+				 _hud.detailsLabel.text = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
              } else {
-                 _hud.detailsLabelText = @"网络错误";
+				 _hud.detailsLabel.text = @"网络错误";
              }
-             [_hud hide:YES afterDelay:1];
+             [_hud hideAnimated:YES afterDelay:1];
     }];
 }
 

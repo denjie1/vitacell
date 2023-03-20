@@ -16,6 +16,7 @@
 #import "GITAPI.h"
 
 #import "UIImageView+Util.h"
+#import <YYKit.h>
 
 @implementation Tools
 
@@ -45,18 +46,18 @@
 + (UIImage *)loadImage:(NSString *)urlString {
     NSURL *imageURL = [NSURL URLWithString:urlString];
     __block UIImage *img = [[UIImage alloc] init];
-
+    
     [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:imageURL
                                                           options:0
                                                          progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                                             
-                                                         }
+        
+    }
                                                         completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                                                            if (image && finished) {
-                                                                img = image;
-                                                            }
-                                                        }];
-
+        if (image && finished) {
+            img = image;
+        }
+    }];
+    
     return img;
 }
 
@@ -66,12 +67,12 @@
 + (NSString *)escapeHTML:(NSString *)originalHTML
 {
     NSMutableString *result = [[NSMutableString alloc] initWithString:originalHTML];
-	[result replaceOccurrencesOfString:@"&"  withString:@"&amp;"  options:NSLiteralSearch range:NSMakeRange(0, [result length])];
-	[result replaceOccurrencesOfString:@"<"  withString:@"&lt;"   options:NSLiteralSearch range:NSMakeRange(0, [result length])];
-	[result replaceOccurrencesOfString:@">"  withString:@"&gt;"   options:NSLiteralSearch range:NSMakeRange(0, [result length])];
-	[result replaceOccurrencesOfString:@"\"" withString:@"&quot;" options:NSLiteralSearch range:NSMakeRange(0, [result length])];
-	[result replaceOccurrencesOfString:@"'"  withString:@"&#39;"  options:NSLiteralSearch range:NSMakeRange(0, [result length])];
-	return result;
+    [result replaceOccurrencesOfString:@"&"  withString:@"&amp;"  options:NSLiteralSearch range:NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString:@"<"  withString:@"&lt;"   options:NSLiteralSearch range:NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString:@">"  withString:@"&gt;"   options:NSLiteralSearch range:NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString:@"\"" withString:@"&quot;" options:NSLiteralSearch range:NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString:@"'"  withString:@"&#39;"  options:NSLiteralSearch range:NSMakeRange(0, [result length])];
+    return result;
 }
 
 + (NSString *)flattenHTML:(NSString *)html {
@@ -157,7 +158,7 @@
     } else {
         font = [UIFont systemFontOfSize:size];
     }
-
+    
     UIColor *grayColor = [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1];
     NSAttributedString *grayString = [[NSAttributedString alloc] initWithString:string
                                                                      attributes:@{NSFontAttributeName:font,
@@ -183,13 +184,27 @@
 
 + (UIColor *)uniformColor
 {
-    return [UIColor colorWithRed:235.0/255 green:235.0/255 blue:243.0/255 alpha:1.0];
+    if (@available(iOS 13.0,*)) {
+        UIColor *color = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return [UIColor colorWithHexString:@"#f6f6f6"];
+            } else {
+                return [UIColor colorWithHexString:@"#2F2F2F"];
+            }
+            
+        }];
+        return color;
+    } else {
+        return [UIColor colorWithRed:235.0/255 green:235.0/255 blue:243.0/255 alpha:1.0];
+    }
+
 }
 
 + (UIImage *)getScreenshot:(UIView *)view
 {
     UIGraphicsBeginImageContext(view.frame.size);
-
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
     [view.layer renderInContext:context];
 #if 1
@@ -201,9 +216,9 @@
         UIGraphicsBeginImageContext(view.frame.size);
     }
 #endif
-
+    
     UIGraphicsEndImageContext();
-
+    
     return screenshot;
 }
 

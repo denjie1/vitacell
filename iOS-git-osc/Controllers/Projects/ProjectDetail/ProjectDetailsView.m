@@ -28,6 +28,7 @@
 #import "DataSetObject.h"
 #import <SafariServices/SafariServices.h>
 
+#import "UIColor+Util.h"
 
 static NSString * const ProjectDetailsCellID = @"ProjectDetailsCell";
 
@@ -63,7 +64,7 @@ static NSString * const ProjectDetailsCellID = @"ProjectDetailsCell";
     
     self.navigationController.navigationBar.translucent = NO;
     
-    self.view.backgroundColor = UIColorFromRGB(0xf0f0f0);
+    self.view.backgroundColor = [UIColor toolbarBackground];
     [[UITableViewHeaderFooterView appearance] setTintColor:UIColorFromRGB(0xf0f0f0)];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ProjectDetailsCellID];
@@ -394,7 +395,7 @@ static NSString * const ProjectDetailsCellID = @"ProjectDetailsCell";
 
 - (void)showShareView
 {
-	NSString *textToShare = [NSString stringWithString:_project.pathWithNamespace];
+	NSString *textToShare = [NSString stringWithFormat:@"%@ / %@",_project.owner.name,_project.path];
 	NSURL *urlShare = [NSURL URLWithString:_projectURL];
 	NSArray *activityItems = @[textToShare, urlShare];
 	UIActivityViewController *activityController=[[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];

@@ -260,20 +260,20 @@
        parameters:params
           success:^(AFHTTPRequestOperation * operation, id responseObject) {
               if (responseObject == nil) {
-                  _hud.detailsLabelText = @"网络错误";
+				  _hud.detailsLabel.text = @"网络错误";
               } else {
-                  _hud.detailsLabelText = @"反馈成功";
+				  _hud.detailsLabel.text = @"反馈成功";
                   
                   [self.navigationController popViewControllerAnimated:YES];
               }
-              [_hud hide:YES afterDelay:1];
+              [_hud hideAnimated:YES afterDelay:1];
           } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
               if (error != nil) {
-                  _hud.detailsLabelText = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
+				  _hud.detailsLabel.text = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
               } else {
-                  _hud.detailsLabelText = @"网络错误";
+				  _hud.detailsLabel.text = @"网络错误";
               }
-              [_hud hide:YES afterDelay:1];
+              [_hud hideAnimated:YES afterDelay:1];
           }];
 }
 
@@ -289,7 +289,7 @@
     [manager POST:@"https://git.oschina.net/upload"
        parameters:@{@"private_token" : [Tools getPrivateToken]}
 constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [_hud hide:YES afterDelay:1];
+        [_hud hideAnimated:YES afterDelay:1];
     
         if (_image) {
             [formData appendPartWithFileData:[Tools compressImage:_image]
@@ -300,16 +300,16 @@ constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
     } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         GLIssueFeedImage *filesImage = [[GLIssueFeedImage alloc] initWithJSON:responseObject];
         if (filesImage.isSuccess) {
-            [_hud hide:YES afterDelay:1];
+            [_hud hideAnimated:YES afterDelay:1];
             NSString *imageUrl = [filesImage.files objectForKey:@"url"];
             [self feedBackWithText:imageUrl];
         } else {
-            _hud.detailsLabelText = @"网络错误";
-            [_hud hide:YES afterDelay:1];
+			_hud.detailsLabel.text = @"网络错误";
+            [_hud hideAnimated:YES afterDelay:1];
         }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        _hud.detailsLabelText = @"网络错误";
-        [_hud hide:YES afterDelay:1];
+		_hud.detailsLabel.text = @"网络错误";
+        [_hud hideAnimated:YES afterDelay:1];
     }];
     
 }

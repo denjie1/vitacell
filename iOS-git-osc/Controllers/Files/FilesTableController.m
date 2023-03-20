@@ -121,8 +121,8 @@ static NSString * const cellId = @"FileCell";
                      _hud.userInteractionEnabled = NO;
                      _hud.mode = MBProgressHUDModeCustomView;
                      //没有权限访问
-                     _hud.detailsLabelText = @"您没有访问权限";
-                     [_hud hide:YES afterDelay:1.0];
+					 _hud.detailsLabel.text = @"您没有访问权限";
+                     [_hud hideAnimated:YES afterDelay:1];
                      
                      self.emptyDataSet.state = noDataState;
                      self.emptyDataSet.respondString = @"您没有访问权限";

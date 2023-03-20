@@ -53,15 +53,15 @@
                                                           options:0
                                                          progress:nil
                                                         completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                                                            [_hud hide:YES afterDelay:1];
+                                                            [_hud hideAnimated:YES afterDelay:1];
                                                             if (image && finished) {
                                                                 [_imageView setImage:image];
                                                             } else {
-                                                                _hud.detailsLabelText = @"抱歉，图片加载出错";
-                                                                [_hud hide:YES afterDelay:1];
+																_hud.detailsLabel.text =@"抱歉，图片加载出错";
+                                                                [_hud hideAnimated:YES afterDelay:1];
                                                             }
                                                         }];
-    [_hud hide:YES afterDelay:1];
+    [_hud hideAnimated:YES afterDelay:1];
 }
 
 - (void)didReceiveMemoryWarning

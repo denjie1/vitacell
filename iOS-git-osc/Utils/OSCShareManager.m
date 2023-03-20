@@ -8,18 +8,22 @@
 
 #import "OSCShareManager.h"
 #import "Tools.h"
-//#import "UMSocial.h"
 #import <MBProgressHUD.h>
+#import "AppDelegate.h"
 
 @import SafariServices;
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SHAREBOARD_HEIGHT curShareBoard.bounds.size.height
 #define SHAREBOARD_WIDTH curShareBoard.bounds.size.width
+#define kRedirectURI    @"https://www.sina.com"
 
 @interface OSCShareManager ()<OSCShareBoardDelegate>
+
+
 {
 	__weak OSCShareBoard* _curShareBoard;
+    
 }
 
 @end
@@ -147,9 +151,15 @@ static OSCShareManager* _shareManager ;
     }
 }
 
+-(void)messageShare
+{
+	
+}
+
 - (IBAction)buttonAction:(id)sender {
     UIButton *button = (UIButton *)sender;
     UIViewController* curViewController = [self topViewControllerForViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+	
 //	
 //    UMSocialUrlResource* resource = nil;
 //    if (self.resourceUrl && self.resourceUrl.length > 0) {
@@ -159,24 +169,13 @@ static OSCShareManager* _shareManager ;
 //    switch (button.tag) {
 //        case 1: //weibo
 //        {
-//            if (_isImage) {
-//                [[UMSocialData defaultData].extConfig.sinaData.urlResource setResourceType:UMSocialUrlResourceTypeImage url:self.href];
-//            }else{
-//        
-//               [[UMSocialData defaultData].extConfig.sinaData.urlResource setResourceType:UMSocialUrlResourceTypeDefault url:self.href];
+//            if (![WeiboSDK isWeiboAppInstalled]) {
+//                return;
 //            }
-//            [[UMSocialDataService defaultDataService] postSNSWithTypes:@[UMShareToSina]
-//                                                               content:[NSString stringWithFormat:@"%@", self.descString]
-//                                                                 image:self.logoImage
-//                                                              location:nil
-//                                                           urlResource:resource
-//                                                   presentedController:curViewController
-//                                                            completion:^(UMSocialResponseEntity *response) {
-//                                                                if (response.responseCode == UMSResponseCodeSuccess) {
-//                                                                    NSLog(@"分享成功");
-//                                                                }
-//                                                            }];
-//            
+//            WBMessageObject *message = [WBMessageObject message];
+//            message.text = self.href;
+//            _messageObject = message;
+//            [self messageShare];
 //            break;
 //        }
 //        case 2: //Wechat Timeline
@@ -370,12 +369,3 @@ static OSCShareManager* _shareManager ;
 }
 
 @end
-
-
-
-
-
-
-
-
-

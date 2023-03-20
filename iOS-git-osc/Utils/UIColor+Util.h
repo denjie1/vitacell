@@ -15,5 +15,11 @@
 
 + (UIColor *)navigationbarColor;
 + (UIColor *)uniformColor;
++ (UIColor *)textMainColor;
++ (UIColor *)textSecondaryColor;
++ (UIColor *)toolbarBackground;
++ (UIColor *)cellSelected;
++ (UIColor *)placeHolder;
++ (UIColor *)contentBackground;
 
 @end

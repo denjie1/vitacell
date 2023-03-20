@@ -132,10 +132,11 @@ static NSString * const IssueDescriptionCellId = @"IssueDescriptionCell";
 {
     if (section > 0) {return nil;}
     UIView *headerView = [UIView new];
-    headerView.backgroundColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f];
+    headerView.backgroundColor = [UIColor contentBackground];
     
     UITextView *titleText = [UITextView new];
-    titleText.backgroundColor = [UIColor clearColor];
+    titleText.backgroundColor = [UIColor contentBackground];
+    titleText.textColor = [UIColor textMainColor];
     titleText.font = [UIFont boldSystemFontOfSize:13];
     [headerView addSubview:titleText];
     titleText.translatesAutoresizingMaskIntoConstraints = NO;
@@ -268,7 +269,7 @@ static NSString * const IssueDescriptionCellId = @"IssueDescriptionCell";
     [manager GET:strUrl
       parameters:nil
          success:^(AFHTTPRequestOperation * operation, id responseObject) {
-             [_hud hide:YES afterDelay:1];
+             //[_hud hide:YES afterDelay:1];
              
              if (responseObject == nil) { } else {
                  [responseObject enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -282,11 +283,11 @@ static NSString * const IssueDescriptionCellId = @"IssueDescriptionCell";
              }
          } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
              if (error != nil) {
-                 _hud.detailsLabelText = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
+                 //_hud.detailsLabelText = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
              } else {
-                 _hud.detailsLabelText = @"网络错误";
+                 //_hud.detailsLabelText = @"网络错误";
              }
-             [_hud hide:YES afterDelay:1];
+             //[_hud hide:YES afterDelay:1];
          }];
 }
 

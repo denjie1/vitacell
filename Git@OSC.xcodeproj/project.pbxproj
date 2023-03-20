@@ -1454,36 +1454,35 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5F51339DF49E989C2F74C44 /* Pods-Git@OSC.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hailong Zhang (WSUBE85MHP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2005261458;
+				CURRENT_PROJECT_VERSION = 2005261613;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = B2VZE84NAT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMengSocial/**",
+					"\"$(SRCROOT)/../UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS-git-osc/Git@OSC-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenAPI.framework\"/**",
 				);
 				INFOPLIST_FILE = "iOS-git-osc/Git@OSC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/Sina",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"\"$(SRCROOT)/../UMengSocial\"/**",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.6.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.oschina.gitapp;
 				PRODUCT_NAME = "码云";
 				PROVISIONING_PROFILE = "";
@@ -1498,36 +1497,35 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C214282713DB85D3C417D8CA /* Pods-Git@OSC.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hailong Zhang (WSUBE85MHP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2005261458;
+				CURRENT_PROJECT_VERSION = 2005261613;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = B2VZE84NAT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMengSocial/**",
+					"\"$(SRCROOT)/../UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS-git-osc/Git@OSC-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenAPI.framework\"/**",
 				);
 				INFOPLIST_FILE = "iOS-git-osc/Git@OSC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/Sina",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
-					"$(PROJECT_DIR)/iOS-git-osc/Vendor/UMSocial_Sdk_4.2.5/UMSocial_Sdk_4.2.5/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"\"$(SRCROOT)/../UMengSocial\"/**",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.6.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.oschina.gitapp;
 				PRODUCT_NAME = "码云";
 				PROVISIONING_PROFILE = "";

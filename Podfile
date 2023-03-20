@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -13,7 +13,9 @@ pod 'MJRefresh'
 pod 'MBProgressHUD'
 pod 'DZNEmptyDataSet'
 pod 'FMDB'
-#pod 'UMengAnalytics-NO-IDFA'
-#pod 'UMengSocial' , '~>5.0'
+# pod 'UMengAnalytics-NO-IDFA'
+# pod 'Reveal-SDK', '~> 23.0', :configurations => ['Debug']
+ pod 'YYKit'
+# pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git" 
 
 end

@@ -193,8 +193,8 @@ static NSString * const NoteCellId = @"NoteCell";
        parameters:parameters
           success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
               if ([responseObject count] > 0) {
-                  _hud.labelText = @"发表成功";
-                  [_hud hide:YES afterDelay:1.0];
+				  _hud.detailsLabel.text = @"发表成功";
+                  [_hud hideAnimated:YES afterDelay:1];
               }
               GLComment *comment = [[GLComment alloc] initWithJSON:responseObject];
               
@@ -204,8 +204,8 @@ static NSString * const NoteCellId = @"NoteCell";
                   [self.tableView reloadData];
               });
           } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-              _hud.labelText = @"发表失败";
-              [_hud hide:YES afterDelay:1.0];
+			  _hud.detailsLabel.text = @"发表失败";
+              [_hud hideAnimated:YES afterDelay:1];
         }];
 }
 

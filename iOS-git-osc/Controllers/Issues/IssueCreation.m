@@ -147,20 +147,20 @@
        parameters:params
           success:^(AFHTTPRequestOperation * operation, id responseObject) {
             if (responseObject == nil) {
-                _hud.detailsLabelText = @"网络错误";
+				_hud.detailsLabel.text = @"网络错误";
             } else {
-                _hud.detailsLabelText = @"Issue 创建成功";
+				_hud.detailsLabel.text = @"Issue 创建成功";
                 
                 [self.navigationController popViewControllerAnimated:YES];
             }
-              [_hud hide:YES afterDelay:1];
+              [_hud hideAnimated:YES afterDelay:1];
           } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
               if (error != nil) {
-                  _hud.detailsLabelText = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
+				  _hud.detailsLabel.text = [NSString stringWithFormat:@"网络异常，错误码：%ld", (long)error.code];
               } else {
-                  _hud.detailsLabelText = @"网络错误";
+				  _hud.detailsLabel.text = @"网络错误";
               }
-              [_hud hide:YES afterDelay:1];
+              [_hud hideAnimated:YES afterDelay:1];
     }];
 }
 
@@ -203,7 +203,7 @@
     CGFloat y;
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
     {
-        y = 64;
+        y = NavHeight;
     } else {
         y = 0;
     }
